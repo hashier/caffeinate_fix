@@ -433,6 +433,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		001F196B1739681E003701AF /* IOPMLibPrivate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IOPMLibPrivate.h; sourceTree = "<group>"; };
 		40882BA6019747120ACA2928 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = /System/Library/Frameworks/CoreFoundation.framework; sourceTree = "<absolute>"; };
 		40882BA7019747120ACA2928 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = /System/Library/Frameworks/IOKit.framework; sourceTree = "<absolute>"; };
 		40882BA8019747120ACA2928 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = /System/Library/Frameworks/SystemConfiguration.framework; sourceTree = "<absolute>"; };
@@ -654,9 +655,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		001F19691739681E003701AF /* IOKit */ = {
+			isa = PBXGroup;
+			children = (
+				001F196A1739681E003701AF /* pwr_mgt */,
+			);
+			path = IOKit;
+			sourceTree = "<group>";
+		};
+		001F196A1739681E003701AF /* pwr_mgt */ = {
+			isa = PBXGroup;
+			children = (
+				001F196B1739681E003701AF /* IOPMLibPrivate.h */,
+			);
+			path = pwr_mgt;
+			sourceTree = "<group>";
+		};
 		08FB7794FE84155DC02AAC07 /* pmconfigd */ = {
 			isa = PBXGroup;
 			children = (
+				001F19691739681E003701AF /* IOKit */,
 				C110135B0EBB9C9F00FD5C2D /* AspenSDK.xcconfig */,
 				72D0ECF708F73F9D00CCEA2F /* AppleSmartBatteryManager */,
 				08FB7795FE84155DC02AAC07 /* powerd */,
@@ -1829,6 +1847,10 @@
 			baseConfigurationReference = C110135B0EBB9C9F00FD5C2D /* AspenSDK.xcconfig */;
 			buildSettings = {
 				COPY_PHASE_STRIP = NO;
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/$(TARGET_NAME)",
+					"$(SRCROOT)",
+				);
 				PM_VERSION = 161.0.0;
 				STRIP_INSTALLED_PRODUCT = NO;
 				WARNING_CFLAGS = "-Wall";
@@ -1839,6 +1861,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C110135B0EBB9C9F00FD5C2D /* AspenSDK.xcconfig */;
 			buildSettings = {
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/$(TARGET_NAME)",
+					"$(SRCROOT)",
+				);
 				PM_VERSION = 161.0.0;
 				WARNING_CFLAGS = "-Wall";
 			};
@@ -2216,6 +2242,10 @@
 			buildSettings = {
 				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/$(TARGET_NAME)",
+					"$(SRCROOT)",
+				);
 				PM_VERSION = 161.0.0;
 				WARNING_CFLAGS = "-Wall";
 			};
@@ -2412,6 +2442,10 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/$(TARGET_NAME)",
+					"$(SRCROOT)",
+				);
 				PM_VERSION = 161.0.0;
 				WARNING_CFLAGS = "-Wall";
 			};

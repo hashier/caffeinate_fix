@@ -1,0 +1,7 @@
+This is a redistribution of caffeinate, a command line tool developed by Apple.
+
+caffeinate creates assertions to alter system sleep behavior.  If no assertion flags are specified, caffeinate creates an assertion to prevent idle sleep.  If a utility is specified, caffeinate creates the assertions on the utility's behalf, and those assertions will persist for the duration of the utility's execution. Otherwise, caffeinate creates the assertions directly, and those assertions will persist until caffeinate exits.
+
+The sources that apple provide can't be compiled out of the box. This repo fixes only the caffeinate target.
+
+Based on PowerManagement 321.21.4 and IOKitUser 755.22.5
